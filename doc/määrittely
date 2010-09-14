@@ -1,0 +1,49 @@
+Lentomatkustajan tax-free -ostoskassi
+Määrittelydokumentti
+Timo Sinnemäki
+Tietokantasovellus, syksy 2010
+14.9.2010
+
+1. Johdanto
+
+1.1. Yleiskuvaus
+
+Harjoitustyössä toteutetaan ohjelma, jonka avulla lentomatkustaja voi tilata varaamalleen paikalle tax-free -tuotteita sekä esittää lentoa koskevia erityistoiveita esimerkiksi lennolla tarjottavista aterioista. Ohjelma tuottaa matkustajalle tilausten pohjalta toimitusasiakirjan ja laskun.
+
+Palvelun tarjoajan käyttöön ohjelmaan kuuluu välineet tuotteiden ryhmittelyyn sekä niiden tarjontatietojen ja esittelymateriaalien ylläpitoon.
+
+1.2. Toteutusympäristö
+
+-Tekstieditori: vim 7.2
+-Versionhallinta: git 1.6
+-Http-palvelin: apache 2.2
+-Ohjelmointikieli: php 5.2
+-Tietokantajärjestelmä: postgresql 8.4
+
+1.3. Toimintaympäristö
+
+-Http-palvelin: apache 2.2
+-Ohjelmointikieli: php 5.2
+-Tietokantajärjestelmä: postgresql 8.4
+
+2. Toiminnot
+
+2.1. Asiakkaan toiminnot
+   
+-Kirjautuminen
+-Lentojen selaus ja valinta
+-Tuotetilaukset
+    -Lisääminen
+    -Muokkaaminen
+    -Poistaminen
+
+2.2. Palveluntarjoajan toiminnot
+
+-Kirjautuminen
+-Tarjontatiedot
+   -Lisääminen
+   -Muokkaaminen
+      -Hinnan muokkaus
+      -Esittelymateriaalin muokkaus
+      -Tuoteryhmän vaihto
+   -Poistaminen
