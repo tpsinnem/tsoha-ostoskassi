@@ -33,7 +33,7 @@ create table henkilot (
    id          integer     PRIMARY KEY,
    nimi        varchar(50) NOT NULL,
    tunnus      char(8)     UNIQUE NOT NULL,
-   salasana    varchar(50) NOT NULL,
+   salasana    varchar(32) NOT NULL,
    yllapitaja  boolean     NOT NULL
 );
 
