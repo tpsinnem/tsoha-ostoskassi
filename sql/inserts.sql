@@ -10,15 +10,17 @@ insert into henkilot (nimi, tunnus, salasana, yllapitaja) values
 insert into paikkavaraukset (henkilo, lento, paikka) 
    select * from (
       (
-         (select h.id from henkilot as h where h.tunnus = 'tturska')
+         (select h.id from henkilot as h where h.tunnus = 'tturska') as a
          cross join
-         (values ('abc', 'a123'),('xyz', 'b222'))
+         (values ('abc', 'a123'),('xyz', 'b222')) as c
       )
-      union
+   )
+   union
+   select * from (
       (
-         (select h.id from henkilot as h where h.tunnus = 'aahven')
+         (select h.id from henkilot as h where h.tunnus = 'aahven') as b
          cross join
-         (values ('abc', 'a124'))
+         (values ('abc', 'a124')) as d
       )
    );
 
