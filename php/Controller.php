@@ -4,14 +4,14 @@ include_once "include.php";
 
 class Controller {
 
-   private function nykyinenUrl() {
+   private static function nykyinenUrl() {
       return "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    }
-   private function korvaaSivu($termi) {
+   private static function korvaaSivu($termi) {
       return preg_replace("/sivu=[[:alnum:]]*/", "sivu=$termi", nykyinenUrl());
    }
 
-   public function aja() {
+   public static function aja() {
       //TÄYDENNÄ
       if (!isset($_GET['sivu'])) {
          AloitusView::tulosta();
@@ -20,7 +20,7 @@ class Controller {
       }
    }
 
-   public function url($termi) {
+   public static function url($termi) {
       $url = "";
       if (  $termi == 'tuott' ||
             $termi == 'akirj') {
