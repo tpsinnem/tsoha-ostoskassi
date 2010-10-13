@@ -5,7 +5,7 @@ include_once "include.php";
 class AloitusView extends View {
 
    public static function tulosta() {
-      valikko();
+      parent::valikko();
    }
 }
 
