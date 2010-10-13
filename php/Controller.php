@@ -8,7 +8,7 @@ class Controller {
       return "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    }
    private static function korvaaSivu($termi) {
-      return preg_replace("/sivu=[[:alnum:]]*/", "sivu=$termi", nykyinenUrl());
+      return preg_replace("/sivu=[[:alnum:]]*/", "sivu=$termi", self::nykyinenUrl());
    }
 
    public static function aja() {
@@ -24,7 +24,7 @@ class Controller {
       $url = "";
       if (  $termi == 'tuott' ||
             $termi == 'akirj') {
-         $url = korvaaSivu($termi);
+         $url = self::korvaaSivu($termi);
       }
       return $url;
    }
