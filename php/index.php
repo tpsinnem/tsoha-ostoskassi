@@ -2,6 +2,6 @@
 
 include_once "include.php";
 
-Controller.run();
+Controller.aja();
 
-echo "Kala" ?>
+?>
