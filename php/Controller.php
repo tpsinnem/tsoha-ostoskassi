@@ -2,9 +2,14 @@
 
 include_once "include.php";
 
-const ROOT_URL = 'http://tsinnema.users.cs.helsinki.fi/tsoha/';
-
 class Controller {
+
+   private function nykyinenUrl() {
+      return "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+   }
+   private function korvaaSivu($termi) {
+      return preg_replace("/sivu=[[:alnum:]]*/", "sivu=$termi", nykyinenUrl());
+   }
 
    public function aja() {
       //TÄYDENNÄ
@@ -16,6 +21,13 @@ class Controller {
    }
 
    public function url($termi) {
-      if ($termi == 'tuott') { //TÄYDENNÄ
-
+      $url = "";
+      if (  $termi == 'tuott' ||
+            $termi == 'akirj') {
+         $url = korvaaSivu($termi);
+      }
+      return $url;
+   }
 }
+
+?>

@@ -9,3 +9,4 @@ class AloitusView extends View {
    }
 }
 
+?>
