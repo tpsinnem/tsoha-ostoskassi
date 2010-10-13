@@ -2,6 +2,6 @@
 
 include_once "include.php";
 
-Controller.aja();
+Controller::aja();
 
 ?>
