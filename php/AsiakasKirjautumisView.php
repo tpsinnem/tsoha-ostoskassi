@@ -12,9 +12,9 @@ class AsiakasKirjautumisView extends View {
       <form action="<?php echo(Controller::url('aloit')); ?>" method="post">
       <p>
          <label for="tunnus">Tunnus: </label>
-            <input type="text" id="tunnus" /><br />
+            <input type="text" name="tunnus" /><br />
          <label for="salasana">Salasana: </label>
-            <input type="password" id="salasana" /><br />
+            <input type="password" name="salasana" /><br />
          <input type="submit" value="Kirjaudu" />
       </p>
       </form>
