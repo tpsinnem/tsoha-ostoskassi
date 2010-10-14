@@ -3,9 +3,9 @@ insert into lennot (tunnus) values
    ('xyz');
 
 insert into henkilot (nimi, tunnus, salasana, yllapitaja) values
-   ('Tapani Turska', 'tturska', 'c496bb4c3721eba3fab43875c2bda51f', FALSE),
-   ('Aino Ahven', 'aahven', 'a4bab155312d0159b35af2c5be1e2744', FALSE),
-   ('Heikki Hauki', 'hhauki', '6a68561365c10a0aec215990e1cf7ffa', TRUE);
+   ('Tapani Turska', 'tturska', '1c401339097ad6bda2c574046876f6c3', FALSE),
+   ('Aino Ahven', 'aahven', '35285cc69522e65bcd4a82751c621428', FALSE),
+   ('Heikki Hauki', 'hhauki', '91b96640cc0565f0065eb02c4fda530d', TRUE);
 
 insert into paikkavaraukset (henkilo, lento, paikka) 
    select * from (
