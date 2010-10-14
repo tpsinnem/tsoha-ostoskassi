@@ -15,17 +15,15 @@ class Controller {
    }
 */
 
-   public static function aja() {
-      $data = file_get_contents('php://input');
-      var_dump($data);
-      if (isset($_POST['tunnus']) && isset($_POST['salasana'])) {
-         echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
-         if (!isset($_POST['yllapitaja'])) {
-            echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
-            Model::kirjaudu($_POST['tunnus'], $_POST['salasana']);
+   public static function aja($post) {
+      if (isset($post['tunnus']) && isset($post['salasana'])) {
+         echo("<p>".$post['tunnus'].$post['salasana'].md5($post['salasana']));
+         if (!isset($post['yllapitaja'])) {
+            echo("<p>".$post['tunnus'].$post['salasana'].md5($post['salasana']));
+            Model::kirjaudu($post['tunnus'], $post['salasana']);
          }
       }
-      if (isset($_post['ulos'])) {
+      if (isset($post['ulos'])) {
          Model::kirjauduUlos();
       }
       //TÄYDENNÄ
