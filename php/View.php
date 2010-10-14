@@ -33,9 +33,12 @@ class View {
       // TÄYDENNÄ
       echo('<div class=\"valikko\">');
       echo('<a href="'.Controller::url('aloit').'">Etusivu</a>');
+      echo(' ');
       echo('<a href="'.Controller::url('tuott').'">Tuotteet</a>');
+      echo(' ');
       if (!isset($_SESSION['tunnus'])) {
          echo('<a href="'.Controller::url('akirj').'">Kirjaudu</a>');
+      echo(' ');
       }
       echo('</div>');
    }
