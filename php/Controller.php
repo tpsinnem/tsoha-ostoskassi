@@ -16,7 +16,9 @@ class Controller {
 */
 
    public static function aja() {
-      phpinfo();
+      $data = file_get_contents('php://input');
+      print "DATA: <pre>";
+      var_dump($data);
       if (isset($_POST['tunnus']) && isset($_POST['salasana'])) {
          echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
          if (!isset($_POST['yllapitaja'])) {
