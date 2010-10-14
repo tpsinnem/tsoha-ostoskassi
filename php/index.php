@@ -3,7 +3,7 @@
 include_once "include.php";
 
 View::alku();
-Controller::aja($_POST);
+Controller::aja(clone $_POST);
 View::loppu();
 
 ?>
