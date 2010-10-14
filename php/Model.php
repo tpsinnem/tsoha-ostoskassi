@@ -9,7 +9,7 @@ class Model {
    }
 
    public static function kirjaudu($tunnus, $salasana, $yllapitaja=false) {
-      $result =   pg_query_params(  db(),
+      $result =   pg_query_params(  self::db(),
                                     'select salasana, yllapitaja from henkilot where tunnus = $1',
                                     array($tunnus)
                   );
