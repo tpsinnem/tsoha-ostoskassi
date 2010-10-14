@@ -5,7 +5,7 @@ class Model {
    const CONN_STRING = 'host=localhost dbname=tsinnema user=tsinnema password=58bfa34cd0ca839d';
 
    private static function db() {
-      return pg_connect(CONN_STRING);
+      return pg_connect(self::CONN_STRING);
    }
 
    public static function kirjaudu($tunnus, $salasana, $yllapitaja=false) {
