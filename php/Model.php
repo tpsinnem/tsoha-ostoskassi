@@ -22,7 +22,7 @@ class Model {
       if (  md5(trim($salasana)) === $oikeaSalasana &&
             !($yllapitaja==true && $oikeaYllapitaja==false) ) {
          $_SESSION['tunnus'] = $tunnus;
-         $_SESSION['yllapitaja'] = $yllapitaja;
+         $_SESSION['yllapitaja'] = $oikeaYllapitaja; // pelkka $yllapitaja jos erillinen kirjautuminen
          return true;
       } else {
          unset($_SESSION['tunnus']);
