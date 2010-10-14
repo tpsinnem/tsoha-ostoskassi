@@ -5,7 +5,6 @@ include_once "include.php";
 class AsiakasKirjautumisView extends View {
 
    public static function tulosta() {
-      parent::alku();
       parent::valikko();
       
       ?>
@@ -22,7 +21,6 @@ class AsiakasKirjautumisView extends View {
       </div>
       <?php
 
-      parent::loppu();
    }
 }
 
