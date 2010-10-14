@@ -47,7 +47,7 @@ class Controller {
       }
 
 
-      $url = KANTA_URL.$parametriString;
+      $url = self::KANTA_URL.$parametriString;
       return $url;
    }
 }
