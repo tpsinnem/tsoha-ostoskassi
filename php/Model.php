@@ -19,7 +19,7 @@ class Model {
          $oikeaYllapitaja = true;
       }
 
-      if (  md5($salasana) === $oikeaSalasana &&
+      if (  md5(trim($salasana)) === $oikeaSalasana &&
             !($yllapitaja==true && $oikeaYllapitaja==false) ) {
          $_SESSION['tunnus'] = $tunnus;
          $_SESSION['yllapitaja'] = $yllapitaja;
