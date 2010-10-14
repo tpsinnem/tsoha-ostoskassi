@@ -17,7 +17,9 @@ class Controller {
 
    public static function aja() {
       if (isset($_POST['tunnus']) && isset($_POST['salasana'])) {
+         echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
          if (!isset($_POST['yllapitaja'])) {
+            echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
             Model::kirjaudu($_POST['tunnus'], $_POST['salasana']);
          }
       }
