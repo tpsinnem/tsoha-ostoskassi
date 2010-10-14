@@ -6,20 +6,9 @@ class Controller {
 
    const KANTA_URL = 'http://tsinnema.users.cs.helsinki.fi/tsoha/index.php';
 
-/*
-   private static function nykyinenUrl() {
-      return "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-   }
-   private static function korvaaSivu($termi) {
-      return preg_replace("#sivu=[[:alnum:]]*#", 'sivu=$termi', self::nykyinenUrl());
-   }
-*/
-
    public static function aja() {
       if (isset($_POST['tunnus']) && isset($_POST['salasana'])) {
-         echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
          if (!isset($_POST['yllapitaja'])) {
-            echo("<p>".$_POST['tunnus'].$_POST['salasana'].md5($_POST['salasana']));
             Model::kirjaudu($_POST['tunnus'], $_POST['salasana']);
          }
       }
