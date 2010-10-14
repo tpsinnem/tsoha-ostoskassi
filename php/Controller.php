@@ -4,7 +4,7 @@ include_once "include.php";
 
 class Controller {
 
-   const KANTA_URL = 'http://tsinnema.users.cs.helsinki.fi/tsoha';
+   const KANTA_URL = 'http://tsinnema.users.cs.helsinki.fi/tsoha/index.php';
 
 /*
    private static function nykyinenUrl() {
