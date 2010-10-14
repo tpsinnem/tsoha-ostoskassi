@@ -39,6 +39,14 @@ class View {
       if (!isset($_SESSION['tunnus'])) {
          echo('<a href="'.Controller::url('akirj').'">Kirjaudu</a>');
       echo(' ');
+      } else {
+         ?>
+         <form action="<?php echo(Controller::url('ulos')) ?>" method="post">
+            <input type="hidden" name="ulos" value="ulos" />
+            <input type="submit" value="Kirjaudu ulos" />
+         </form>
+         <?php
+         echo(' '.$_SESSION['tunnus']);
       }
       echo('</div>');
    }

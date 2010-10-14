@@ -16,6 +16,14 @@ class Controller {
 */
 
    public static function aja() {
+      if (isset($_POST['tunnus']) && isset($_POST['salasana'])) {
+         if (!isset($_POST['yllapitaja'])) {
+            Model::kirjaudu($_POST['tunnus'], $_POST['salasana']);
+         }
+      }
+      if (isset($_post['ulos'])) {
+         Model::kirjauduUlos();
+      }
       //TÄYDENNÄ
       if (!isset($_GET['sivu'])) {
          AloitusView::tulosta();
