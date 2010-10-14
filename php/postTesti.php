@@ -19,3 +19,4 @@ foreach($_POST as $kentta => $arvo) {
    </p>
    </form>
 </p>
+<?php phpinfo(); ?>
