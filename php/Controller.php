@@ -36,7 +36,7 @@ class Controller {
          //$url = self::korvaaSivu($termi);
       }
 
-      $parametriString = ""
+      $parametriString = "";
       foreach ($parametrit as $kentta => $arvo) {
          if ($parametriString === "") {
             $parametriString .= '?';
