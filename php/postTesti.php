@@ -3,6 +3,7 @@
 include_once "include.php";
 
 View::alku();
+echo($_SERVER['REQUEST_METHOD']);
 foreach($_POST as $kentta => $arvo) {
    echo($kentta." ".$arvo);
 }
