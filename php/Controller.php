@@ -43,7 +43,7 @@ class Controller {
          } else {
             $parametriString .= '&';
          }
-         $parametriString .= '$kentta=$arvo';
+         $parametriString .= $kentta.'='.$arvo;
       }
 
 
