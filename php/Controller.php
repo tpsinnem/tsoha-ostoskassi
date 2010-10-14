@@ -25,7 +25,7 @@ class Controller {
    }
 
    public static function url($termi = null) {
-      $parametrit = null;
+      $parametrit = array();
       foreach ($_GET as $kentta => $arvo) {
          $parametrit[$kentta] = $arvo;
       }
