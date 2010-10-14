@@ -38,7 +38,7 @@ class Controller {
 
       $parametriString = "";
       foreach ($parametrit as $kentta => $arvo) {
-         if ($parametriString === "") {
+         if ($parametriString == "") {
             $parametriString .= '?';
          } else {
             $parametriString .= '&';
