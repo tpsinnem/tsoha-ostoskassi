@@ -3,6 +3,11 @@
 include_once "include.php";
 
 View::alku();
+var_dump($_POST);
+$post = $_POST;
+View::loppu();
+
+/*
 echo($_SERVER['REQUEST_METHOD']);
 foreach($_POST as $kentta => $arvo) {
    echo($kentta." ".$arvo);
@@ -20,3 +25,4 @@ foreach($_POST as $kentta => $arvo) {
    </form>
 </p>
 <?php phpinfo(); ?>
+*/
