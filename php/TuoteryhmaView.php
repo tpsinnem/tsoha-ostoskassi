@@ -14,7 +14,7 @@ class TuoteryhmaView extends View {
          }
          echo("</ul>\n");
       }
-      if ($_SESSION['yllapitaja']=true) {
+      if ($_SESSION['yllapitaja']==true) {
          ?>
          <form action="<?php echo(Controller::url('ryhmat')); ?>" method="post">
             <input type="text" name="uusiRyhma" />
