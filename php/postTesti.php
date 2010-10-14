@@ -2,7 +2,7 @@
 
 include_once "include.php";
 
-Model::alku();
+View::alku();
 foreach($_POST as $kentta => $arvo) {
    echo($kentta." ".$arvo);
 }
