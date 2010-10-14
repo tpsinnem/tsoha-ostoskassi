@@ -24,16 +24,18 @@ class Controller {
       }
    }
 
-   public static function url($termi) {
+   public static function url($termi = null) {
       $parametrit = null;
       foreach ($_GET as $kentta => $arvo) {
          $parametrit[$kentta] = $arvo;
       }
 
+      if ($termi == 'aloit') {
+         unset($parametrit['sivu']);
+      }
       if (  $termi == 'tuott' ||
             $termi == 'akirj') {
          $parametrit['sivu'] = $termi;
-         //$url = self::korvaaSivu($termi);
       }
 
       $parametriString = "";
@@ -45,7 +47,6 @@ class Controller {
          }
          $parametriString .= $kentta.'='.$arvo;
       }
-
 
       $url = self::KANTA_URL.$parametriString;
       return $url;
