@@ -23,18 +23,18 @@ class Controller {
       }
    }
 
-   public static function url($termi = null) {
+   public static function url($uudetParametrit) {
       $parametrit = array();
       foreach ($_GET as $kentta => $arvo) {
          $parametrit[$kentta] = $arvo;
       }
 
-      if ($termi == 'aloit') {
+      if ($uudetParametrit['sivu'] == 'aloit') {
          unset($parametrit['sivu']);
       }
-      if (  $termi == 'tuott' ||
-            $termi == 'akirj') {
-         $parametrit['sivu'] = $termi;
+      if (  $uudetParametrit['sivu'] == 'tuott' ||
+            $uudetParametrit['sivu'] == 'akirj') {
+         $parametrit['sivu'] = $uudetParametrit['sivu'];
       }
 
       $parametriString = "";
