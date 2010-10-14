@@ -15,7 +15,7 @@ class AsiakasKirjautumisView extends View {
             <input type="text" name="tunnus" /><br />
          <label for="salasana">Salasana: </label>
             <input type="password" name="salasana" /><br />
-         <input type="submit" value="Kirjaudu" />
+         <input type="submit" name="kirjaudu" value="Kirjaudu" />
       </p>
       </form>
       </div>
