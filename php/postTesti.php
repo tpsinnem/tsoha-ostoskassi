@@ -9,7 +9,7 @@ foreach($_POST as $kentta => $arvo) {
 }
 ?>
 <p>
-   <form action="postTesti.php" method="post">
+   <form action="postTesti.php" method="POST">
    <p>
       <label for="tunnus">Tunnus: </label>
          <input type="text" name="tunnus" /><br />
