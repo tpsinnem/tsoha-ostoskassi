@@ -7,14 +7,22 @@ class Controller {
    const KANTA_URL = 'http://tsinnema.users.cs.helsinki.fi/tsoha/index.php';
 
    public static function aja() {
+
       if (isset($_POST['tunnus']) && isset($_POST['salasana'])) {
          if (!isset($_POST['yllapitaja'])) {
             Model::kirjaudu($_POST['tunnus'], $_POST['salasana']);
          }
       }
+
       if (isset($_POST['ulos'])) {
          Model::kirjauduUlos();
       }
+
+      if (isset($_POST['uusiRyhma']) && $_SESSION['yllapitaja'] == true) {
+         Model::uusiRyhma($_POST['uusiRyhma']);
+      }
+
+
       //TÄYDENNÄ
       if (!isset($_GET['sivu'])) {
          AloitusView::tulosta();

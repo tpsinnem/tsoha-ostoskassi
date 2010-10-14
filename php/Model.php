@@ -43,6 +43,11 @@ class Model {
       return pg_fetch_all($result);
    }
 
+   public static function uusiRyhma($nimi) {
+      $queryString = "insert into tuoteryhmat (nimi) values ( $1 );";
+      pg_query_params(self::db(), $queryString, array($nimi));
+   }
+
 }
 
 ?>
