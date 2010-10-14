@@ -20,21 +20,29 @@ class Controller {
          AloitusView::tulosta();
       } else if ($_GET['sivu'] == 'akirj') {
          AsiakasKirjautumisView::tulosta();
+      } else if ($_GET['sivu'] == 'ryhmat') {
+         TuoteryhmaView::tulosta();
       }
    }
 
-   public static function url($uudetParametrit) {
+   public static function url($sivu, $valinta = null) {
       $parametrit = array();
       foreach ($_GET as $kentta => $arvo) {
          $parametrit[$kentta] = $arvo;
       }
 
-      if ($uudetParametrit['sivu'] == 'aloit') {
+      if ($sivu == 'aloit') {
          unset($parametrit['sivu']);
       }
-      if (  $uudetParametrit['sivu'] == 'tuott' ||
-            $uudetParametrit['sivu'] == 'akirj') {
-         $parametrit['sivu'] = $uudetParametrit['sivu'];
+      if (  $sivu == 'ryhmat' ||
+            $sivu == 'akirj' ||
+            $sivu == 'ykirj' ||
+            $sivu == 'lennot') {
+         $parametrit['sivu'] = $sivu;
+      }
+      if ($sivu == 'tuotteet') {
+         $parametrit['sivu'] = 'tuotteet';
+         $parametrit['ryhma'] = $valinta;
       }
 
       $parametriString = "";

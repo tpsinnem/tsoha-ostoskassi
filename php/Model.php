@@ -36,6 +36,13 @@ class Model {
       unset($_SESSION['tunnus']);
       unset($_SESSION['yllapitaja']);
    }
+
+   public static function tuoteryhmat() {
+      $queryString = "select id, nimi from tuoteryhmat";
+      $result = pg_query(self::db(), $queryString);
+      return pg_fetch_all($result);
+   }
+
 }
 
 ?>

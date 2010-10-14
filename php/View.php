@@ -34,7 +34,7 @@ class View {
       echo('<div class=\"valikko\">');
       echo('<a href="'.Controller::url('aloit').'">Etusivu</a>');
       echo(' ');
-      echo('<a href="'.Controller::url('tuott').'">Tuotteet</a>');
+      echo('<a href="'.Controller::url('ryhmat').'">Tuotteet</a>');
       echo(' ');
       if (!isset($_SESSION['tunnus'])) {
          echo('<a href="'.Controller::url('akirj').'">Kirjaudu</a>');
