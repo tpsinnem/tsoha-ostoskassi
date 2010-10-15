@@ -48,6 +48,36 @@ class Model {
       pg_query_params(self::db(), $queryString, array($nimi));
    }
 
+   public static function tuotteet($ryhma) {
+      $queryString = "  select
+                           id, nimi, hinta, esittely
+                        from 
+                           tuotteet
+                        where
+                           tuoteryhma = $1";
+
+      $result = pg_query_params(self::db(), $queryString, array($ryhma));
+      return pg_fetch_all($result);
+   }
+
+   public static function tuote($id) {
+      $queryString = "  select
+                           nimi, hinta, tuoteryhma, esittely
+                        from
+                           tuotteet
+                        where
+                           id = $1";
+      $result = pg_query_params(self::db(), $queryString, array($id));
+      return pg_fetch_array($result);
+   }
+
+   public static function uusiTuote($nimi, $hinta, $esittely, $ryhma) {
+      $queryString = "insert into tuotteet (nimi, hinta, esittely, ryhma)
+                        values ( $1, $2, $3, $4 );";
+      pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma));
+   }
+                        
+
 }
 
 ?>

@@ -7,5 +7,7 @@ include_once "View.php";
 include_once "AloitusView.php";
 include_once "AsiakasKirjautumisView.php";
 include_once "TuoteryhmaView.php";
+include_once "TuotteetView.php";
+include_once "TuoteMuokkausView.php";
 
 ?>

@@ -13,15 +13,26 @@ class Controller {
             Model::kirjaudu($_POST['tunnus'], $_POST['salasana']);
          }
       }
-
       if (isset($_POST['ulos'])) {
          Model::kirjauduUlos();
       }
-
       if (isset($_POST['uusiRyhma']) && $_SESSION['yllapitaja'] == true) {
          Model::uusiRyhma($_POST['uusiRyhma']);
       }
-
+      if (isset($_POST['tuoteMuokkaus'])) {
+         if (isset($_GET['tuote'])) {
+            Model::muokkaaTuote( $_GET['tuote'],
+                                 $_POST['nimi'],
+                                 $_POST['hinta'],
+                                 $_POST['esittely'],
+                                 $_GET['ryhma'] );
+         } else {
+            Model::uusiTuote(    $_POST['nimi'],
+                                 $_POST['hinta'],
+                                 $_POST['esittely'],
+                                 $_GET['ryhma'] );
+         }
+      }
 
       //TÄYDENNÄ
       if (!isset($_GET['sivu'])) {
@@ -51,6 +62,14 @@ class Controller {
       if ($sivu == 'tuotteet') {
          $parametrit['sivu'] = 'tuotteet';
          $parametrit['ryhma'] = $valinta;
+      }
+      if ($sivu == 'muokkaaTuote') {
+         $parametrit['sivu'] = 'muokkaaTuote';
+         if ($valinta != null) {
+            $parametrit['tuote'] = $valinta;
+         } else {
+            unset($parametrit['tuote']);
+         }
       }
 
       $parametriString = "";
