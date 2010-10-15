@@ -25,7 +25,7 @@ class TuoteMuokkausView extends View {
          <label for="hinta">Hinta: </label>
             <input type="text" 
                    name="hinta" 
-                   <?php if ($tuote != null) { echo('value="'.$tuote['hinta']); } ?> /><br />
+                   <?php if ($tuote != null) { echo('value="'.$tuote['hinta']); } ?> ><br />
          <label for="kuvaus">Kuvaus: </label>
             <textarea name="esittely">
             <?php
