@@ -7,8 +7,7 @@ class TuotteetView extends View {
 
    public static function tulosta() {
       parent::valikko();
-      $tuotteet = Model::tuotteet($_GET['id']);
-      var_dump($tuotteet);
+      $tuotteet = Model::tuotteet($_GET['ryhma']);
       if (!empty($tuotteet)) {
          echo("<dl>\n");
          foreach ($tuotteet as $tuote) {
