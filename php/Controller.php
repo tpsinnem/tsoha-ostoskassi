@@ -41,6 +41,10 @@ class Controller {
          AsiakasKirjautumisView::tulosta();
       } else if ($_GET['sivu'] == 'ryhmat') {
          TuoteryhmaView::tulosta();
+      } else if ($_GET['sivu'] == 'tuotteet') {
+         TuotteetView::tulosta();
+      } else if ($_GET['sivu'] == 'muokkaaTuote') {
+         TuoteMuokkausView::tulosta();
       }
    }
 
