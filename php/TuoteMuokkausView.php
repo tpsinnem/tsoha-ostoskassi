@@ -21,8 +21,7 @@ class TuoteMuokkausView extends View {
                      if ($tuote != null) {
                         echo('value="'.trim($tuote['nimi']));
                      }
-                   ?>
-             /><br />
+                   ?> /><br />
          <label for="hinta">Hinta: </label>
             <input type="text" 
                    name="hinta" 
@@ -30,8 +29,7 @@ class TuoteMuokkausView extends View {
                      if ($tuote != null) {
                         echo('value="'.$tuote['hinta']);
                      }
-                   ?>
-             /><br />
+                   ?> /><br />
          <label for="kuvaus">Kuvaus: </label>
             <textarea name="esittely">
             <?php
