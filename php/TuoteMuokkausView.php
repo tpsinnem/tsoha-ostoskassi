@@ -12,7 +12,7 @@ class TuoteMuokkausView extends View {
       }
       
       ?>
-      <form action="<?php echo(Controller::url('tuotteet',$ryhma['id'])); ?>" method="post">
+      <form action="<?php echo(Controller::url('tuotteet',$_GET['ryhma'])); ?>" method="post">
       <p>
          <label for="nimi">Nimi: </label>
             <input type="text" 
