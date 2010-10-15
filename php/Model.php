@@ -76,6 +76,19 @@ class Model {
                         values ( $1, $2, $3, $4 );";
       pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma));
    }
+
+   public static function muokkaaTuote($id, $nimi, $hinta, $esittely, $ryhma) {
+      $queryString = "  update tuotteet
+                        set
+                           nimi = $1,
+                           hinta = $2,
+                           esittely = $3,
+                           tuoteryhma = $4
+                        where
+                           id = $5;"
+      pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma, $id));
+   }
+                     
                         
 
 }
