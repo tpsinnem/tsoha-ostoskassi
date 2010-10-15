@@ -33,7 +33,7 @@ class TuoteMuokkausView extends View {
          <label for="kuvaus">Kuvaus: </label>
             <?php
             if ($tuote != null) {
-               echo('<textarea name="esittely">'.$tuote['hinta'].'</textarea><br />');
+               echo('<textarea name="esittely">'.$tuote['esittely'].'</textarea><br />');
             } else {
                echo('<textarea name="esittely"></textarea><br />');
             }
