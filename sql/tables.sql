@@ -10,7 +10,7 @@ create table lennot (
 create table tuotteet (
    id          serial      PRIMARY KEY,
    nimi        varchar(50) NOT NULL,
-   hinta       integer     NOT NULL,
+   hinta       real     NOT NULL,
    esittely    text,
    tuoteryhma  integer     REFERENCES tuoteryhmat(id)
 );
