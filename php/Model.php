@@ -85,7 +85,7 @@ class Model {
                            esittely = $3,
                            tuoteryhma = $4
                         where
-                           id = $5;"
+                           id = $5;";
       pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma, $id));
    }
                      
