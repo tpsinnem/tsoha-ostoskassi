@@ -15,25 +15,29 @@ class TuoteMuokkausView extends View {
       <form action="<?php echo(Controller::url('tuotteet',$_GET['ryhma'])); ?>" method="post">
       <p>
          <label for="nimi">Nimi: </label>
-            <input type="text" 
-                   name="nimi" 
-                   <?php
-                     if ($tuote != null) {
-                        echo('value="'.trim($tuote['nimi']));
-                     }
-                   ?> /><br />
-         <label for="hinta">Hinta: </label>
-            <input type="text" 
-                   name="hinta" 
-                   <?php if ($tuote != null) { echo('value="'.$tuote['hinta']); } ?> ><br />
-         <label for="kuvaus">Kuvaus: </label>
-            <textarea name="esittely">
             <?php
-               if ($tuote != null) {
-                  echo(trim($tuote['esittely']));
-               }
+            if ($tuote != null) {
+               echo('<input type="text" name="nimi" value="'.$tuote['nimi'].'" /><br />');
+            } else {
+               echo('<input type="text" name="nimi" /><br />');
+            }
             ?>
-            </textarea><br />
+         <label for="hinta">Hinta: </label>
+            <?php
+            if ($tuote != null) {
+               echo('<input type="text" name="hinta" value="'.$tuote['hinta'].'" /><br />');
+            } else {
+               echo('<input type="text" name="hinta" /><br />');
+            }
+            ?>
+         <label for="kuvaus">Kuvaus: </label>
+            <?php
+            if ($tuote != null) {
+               echo('<textarea name="esittely">'.$tuote['hinta'].'</textarea><br />');
+            } else {
+               echo('<textarea name="esittely"></textarea><br />');
+            }
+            ?>
          <input type="submit" name="tuoteMuokkaus" value="Valmis" />
       </p>
       </form>
