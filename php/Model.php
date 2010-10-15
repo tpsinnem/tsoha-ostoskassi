@@ -72,7 +72,7 @@ class Model {
    }
 
    public static function uusiTuote($nimi, $hinta, $esittely, $ryhma) {
-      $queryString = "insert into tuotteet (nimi, hinta, esittely, ryhma)
+      $queryString = "insert into tuotteet (nimi, hinta, esittely, tuoteryhma)
                         values ( $1, $2, $3, $4 );";
       pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma));
    }
