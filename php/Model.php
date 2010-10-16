@@ -104,10 +104,12 @@ class Model {
                               pv.henkilo = h.id
                               and
                               pv.lento = l.tunnus;";
-         return pg_query_params(self::db(), $queryString, array($_SESSION['tunnus']));
+         $result = pg_query_params(self::db(), $queryString, array($_SESSION['tunnus']));
+         return pg_fetch_all($result);
       } else {
          $queryString = "select tunnus from lennot;";
-         return pg_query(self::db(), $queryString);
+         $result = pg_query(self::db(), $queryString);
+         return pg_fetch_all($result);
       }
    }
 
