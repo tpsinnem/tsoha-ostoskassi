@@ -90,7 +90,7 @@ class Model {
    }
 
    public static function lennot() {
-      $queryString = ""
+      $queryString = "";
       if ($_SESSION['yllapitaja'] == false) {
          $queryString = "  select
                               l.tunnus
