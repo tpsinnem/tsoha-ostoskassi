@@ -92,7 +92,6 @@ class Model {
    public static function lennot() {
       $queryString = "";
       if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
-         echo($_SESSION['tunnus']);
          $queryString = "  select
                               l.tunnus
                            from 
@@ -105,10 +104,10 @@ class Model {
                               pv.henkilo = h.id
                               and
                               pv.lento = l.tunnus;";
-         pg_query_params(self::db(), $queryString, array($_SESSION['tunnus']));
+         return pg_query_params(self::db(), $queryString, array($_SESSION['tunnus']));
       } else {
          $queryString = "select tunnus from lennot;";
-         pg_query(self::db(), $queryString);
+         return pg_query(self::db(), $queryString);
       }
    }
 
