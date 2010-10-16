@@ -69,6 +69,10 @@ class Controller {
          $parametrit['sivu'] = 'tuotteet';
          $parametrit['ryhma'] = $valinta;
       }
+      if ($sivu == 'tilaukset') {
+         $parametrit['sivu'] = 'tilaukset';
+         $parametrit['lento'] = $valinta;
+      }
       if ($sivu == 'muokkaaTuote') {
          $parametrit['sivu'] = 'muokkaaTuote';
          if ($valinta != null) {

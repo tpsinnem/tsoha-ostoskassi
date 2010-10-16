@@ -11,7 +11,7 @@ class LennotView extends View {
          echo("<ul>\n");
          foreach ($lennot as $lento) {
             echo( '<li><a href="'.
-                  Controller::url('tilaukset',$lento['tunnus']).
+                  Controller::url('tilaukset',trim($lento['tunnus'])).
                   '">Lento '.$lento['tunnus']."</a></li>\n");
          }
          echo("</ul>\n");
