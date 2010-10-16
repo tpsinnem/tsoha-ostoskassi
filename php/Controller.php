@@ -43,6 +43,8 @@ class Controller {
          TuoteryhmaView::tulosta();
       } else if ($_GET['sivu'] == 'tuotteet') {
          TuotteetView::tulosta();
+      } else if ($_GET['sivu'] == 'lennot') {
+         LennotView::tulosta();
       } else if ($_GET['sivu'] == 'muokkaaTuote') {
          TuoteMuokkausView::tulosta();
       }
