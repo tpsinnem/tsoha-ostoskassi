@@ -96,11 +96,14 @@ class Model {
                               l.tunnus
                            from 
                               paikkavaraukset as pv,
-                              lennot as l
+                              lennot as l,
+                              henkilot as h
                            where
-                              pv.lento = l.tunnus
+                              h.tunnus = $1
                               and
-                              pv.henkilo = $1;";
+                              pv.henkilo = h.id
+                              and
+                              pv.lento = l.tunnus;";
          pg_query_params(self::db(), $queryString, array($_SESSION['tunnus']));
       } else {
          $queryString = "select tunnus from lennot;";
