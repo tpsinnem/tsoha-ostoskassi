@@ -88,6 +88,27 @@ class Model {
                            id = $5;";
       pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma, $id));
    }
+
+   public static function lennot() {
+      $queryString = ""
+      if ($_SESSION['yllapitaja'] == false) {
+         $queryString = "  select
+                              l.tunnus
+                           from 
+                              paikkavaraukset as pv
+                              inner join
+                              lennot as l
+                           where
+                              pv.lento = l.tunnus
+                              and
+                              pv.henkilo = $1;";
+         pg_query_params(self::db(), $queryString, array($_SESSION['tunnus']));
+      } else {
+         $queryString = "select tunnus from lennot;";
+         pg_query(self::db(), $queryString);
+      }
+   }
+
                      
                         
 
