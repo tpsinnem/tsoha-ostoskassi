@@ -7,6 +7,7 @@ class LennotView extends View {
    public static function tulosta() {
       parent::valikko();
       $lennot = Model::lennot();
+      var_dump($lennot);
       if (!empty($lennot)) {
          echo("<ul>\n");
          foreach ($lennot as $lento) {
