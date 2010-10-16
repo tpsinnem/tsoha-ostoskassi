@@ -92,7 +92,7 @@ class Model {
    public static function lennot() {
       $queryString = "";
       if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
-         echo("lennot-testi");
+         echo($_SESSION['tunnus']);
          $queryString = "  select
                               l.tunnus
                            from 
