@@ -95,8 +95,7 @@ class Model {
          $queryString = "  select
                               l.tunnus
                            from 
-                              paikkavaraukset as pv
-                              inner join
+                              paikkavaraukset as pv,
                               lennot as l
                            where
                               pv.lento = l.tunnus
