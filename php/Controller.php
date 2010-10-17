@@ -77,6 +77,9 @@ class Controller {
       if ($sivu == 'aloit') {
          unset($parametrit['sivu']);
       }
+      if ($sivu == 'ulos') {
+         $parametrit = array();
+      }
       if (  $sivu == 'ryhmat' ||
             $sivu == 'akirj' ||
             $sivu == 'ykirj' ||
