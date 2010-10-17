@@ -15,7 +15,9 @@ class TuotteetView extends View {
             <dt>
                <?php echo($tuote['nimi'].": ".$tuote['hinta']."e"); ?>
                <?php
-                  if ($_SESSION['yllapitaja']==false && isset($_GET['lento'])) {
+                  if (  (  $_SESSION['yllapitaja']==false ||
+                           !isset($_SESSION['yllapitaja'])  ) &&
+                        isset($_GET['lento'])) {
                      echo(' <a href="'.Controller::url('tilaa', $tuote['id']).'">tilaa</a>');
                   } else if ($_SESSION['yllapitaja']==true) {
                      echo(' <a href="'.Controller::url('muokkaaTuote', $tuote['id']).'">muokkaa</a>');
