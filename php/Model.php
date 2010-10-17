@@ -90,7 +90,6 @@ class Model {
    }
 
    public static function lennot() {
-      $queryString = "";
       if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
          $queryString = "  select
                               l.tunnus
@@ -109,6 +108,43 @@ class Model {
       } else {
          $queryString = "select tunnus from lennot;";
          $result = pg_query(self::db(), $queryString);
+         return pg_fetch_all($result);
+      }
+   }
+
+   public static function tilaajienPaikat() {
+      if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
+         $queryString = "  select distinct
+                              pv.paikka
+                           from 
+                              paikkavaraukset as pv,
+                              tilaukset as t,
+                              henkilot as h
+                           where
+                              pv.lento = $1
+                              and
+                              h.tunnus = $2
+                              and
+                              pv.henkilo = h.id
+                              and
+                              t.henkilo = h.id
+                              and
+                              t.lento = $1;";
+         $result = pg_query_params( self::db(),
+                                    $queryString,
+                                    array($_GET['lento'], $_SESSION['tunnus']));
+         return pg_fetch_all($result);
+      } else {
+         $queryString = "  select distinct
+                              pv.paikka
+                           from 
+                              paikkavaraukset as pv,
+                              tilaukset as t,
+                           where
+                              pv.lento = $1
+                              and
+                              t.lento = $1;";
+         $result = pg_query_params(self::db(), $queryString, array($_GET['lento']);
          return pg_fetch_all($result);
       }
    }

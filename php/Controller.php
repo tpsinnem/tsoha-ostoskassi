@@ -47,6 +47,8 @@ class Controller {
          LennotView::tulosta();
       } else if ($_GET['sivu'] == 'muokkaaTuote') {
          TuoteMuokkausView::tulosta();
+      } else if ($_GET['sivu'] == 'tilaukset') {
+         TilauksetView::tulosta();
       }
    }
 
