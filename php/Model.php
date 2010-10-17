@@ -139,7 +139,7 @@ class Model {
 
    public static function tilaukset($paikka) {
       $queryString = "  select
-                           ti.id, tu.nimi, ti.kpl, ti.kpl*tu.hinta
+                           ti.id, tu.nimi, ti.kpl, ti.kpl*tu.hinta as hinta
                         from
                            tilaukset as ti,
                            tuotteet as tu,
