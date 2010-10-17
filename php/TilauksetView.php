@@ -29,8 +29,8 @@ class TilauksetView extends View {
             echo("</dd>\n");
          }
          echo("</dl>\n");
-         if (  !isset($_SESSION['yllapitaja']) ||
-               $_SESSION['yllapitaja'] == false) {
+         if (  (!isset($_SESSION['yllapitaja'])) ||
+               ($_SESSION['yllapitaja'] == false)  ) {
             echo('<p><a href="'.
                   Controller::url('tuotteet').
                   '">Tee uusi tilaus</a></p>'."\n");
