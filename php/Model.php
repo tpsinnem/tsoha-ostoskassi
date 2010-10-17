@@ -137,6 +137,29 @@ class Model {
       }
    }
 
+   public static function tilaukset($paikka) {
+      $queryString = "  select
+                           ti.id, tu.nimi, ti.kpl, ti.kpl*tu.hinta
+                        from
+                           tilaukset as ti,
+                           tuotteet as tu,
+                           paikkavaraukset as pv
+                        where
+                           pv.lento = $1
+                           and
+                           pv.paikka = $2
+                           and
+                           ti.lento = pv.lento
+                           and
+                           ti.henkilo = pv.henkilo
+                           tu.id = ti.tuote;";
+      $result = pg_query_params( self::db(),
+                                 $queryString,
+                                 array($_GET['lento'],$paikka) );
+      return pg_fetch_all($result);
+   }
+
+
    public static function tilaajienPaikat() {
       if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
          $queryString = "  select distinct
@@ -173,6 +196,7 @@ class Model {
          return pg_fetch_all($result);
       }
    }
+
 
                      
                         
