@@ -144,7 +144,7 @@ class Model {
                               pv.lento = $1
                               and
                               t.lento = $1;";
-         $result = pg_query_params(self::db(), $queryString, array($_GET['lento']);
+         $result = pg_query_params(self::db(), $queryString, array($_GET['lento']));
          return pg_fetch_all($result);
       }
    }
