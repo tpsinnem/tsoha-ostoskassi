@@ -152,6 +152,7 @@ class Model {
                            ti.lento = pv.lento
                            and
                            ti.henkilo = pv.henkilo
+                           and
                            tu.id = ti.tuote;";
       $result = pg_query_params( self::db(),
                                  $queryString,
