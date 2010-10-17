@@ -33,6 +33,20 @@ class Controller {
                                  $_GET['ryhma'] );
          }
       }
+      if (isset($_POST['tilaa'])) {
+         if (isset($_GET['tilaus'])) {
+            Model::muokkaaTilaus( $_GET['tilaus'],
+                                 $_SESSION['tunnus'],
+                                 $_GET['lento'],
+                                 $_GET['tuote'],
+                                 $_POST['kpl'] );
+         } else {
+            Model::tilaa(  $_SESSION['tunnus'],
+                           $_GET['lento'],
+                           $_GET['tuote'],
+                           $_POST['kpl'] );
+         }
+      }
 
       //TÄYDENNÄ
       if (!isset($_GET['sivu'])) {
@@ -75,8 +89,8 @@ class Controller {
          $parametrit['sivu'] = 'tilaukset';
          $parametrit['lento'] = $valinta;
       }
-      if ($sivu == 'muokkaaTuote') {
-         $parametrit['sivu'] = 'muokkaaTuote';
+      if ($sivu == 'muokkaaTuote' || 'tilaa') {
+         $parametrit['sivu'] = $sivu;
          if ($valinta != null) {
             $parametrit['tuote'] = $valinta;
          } else {

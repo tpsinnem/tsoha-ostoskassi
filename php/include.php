@@ -11,6 +11,6 @@ include_once "TuotteetView.php";
 include_once "TuoteMuokkausView.php";
 include_once "LennotView.php";
 include_once "TilauksetView.php";
-
+include_once "TilausView.php";
 
 ?>

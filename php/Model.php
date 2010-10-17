@@ -89,6 +89,31 @@ class Model {
       pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma, $id));
    }
 
+   public static function muokkaaTilaus($id, $henkilo, $lento, $tuote, $kpl) {
+      $queryString = "  update tilaukset
+                        set
+                           kpl = $5
+                        where
+                           id = $1
+                           and
+                           henkilo = ( select h.id from henkilot as h
+                                          where h.tunnus = $2 )
+                           and
+                           lento = $3
+                           and
+                           tuote = $4;";
+      pg_query_params(self::db(), $queryString, array($id, $henkilo, $lento, $tuote, $kpl));
+   }
+
+   public static function tilaa($henkilo, $lento, $tuote, $kpl) {
+      $queryString = "insert into tilaukset (henkilo, lento, tuote, kpl)
+                        values (
+                           (select h.id from henkilot as h where h.tunnus = $1),
+                           $2, $3, $4);";
+      pg_query_params(self::db(), $queryString, array($henkilo, $lento, $tuote, $kpl));
+   }
+                           
+
    public static function lennot() {
       if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
          $queryString = "  select
