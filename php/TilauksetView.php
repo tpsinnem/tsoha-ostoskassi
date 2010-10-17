@@ -10,6 +10,7 @@ class TilauksetView extends View {
       $tilaajienPaikat = Model::tilaajienPaikat();
       //$tilaukset = Model::tilaukset();
       if (!empty($tilaajienPaikat)) {
+         var_dump($tilaajienPaikat);
          echo("<dl>\n");
          foreach ($tilaajienPaikat as $paikka) {
             echo('<dt>Paikka '.$paikka.'</dt>');
