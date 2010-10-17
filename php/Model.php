@@ -139,7 +139,7 @@ class Model {
                               pv.paikka
                            from 
                               paikkavaraukset as pv,
-                              tilaukset as t,
+                              tilaukset as t
                            where
                               pv.lento = $1
                               and
