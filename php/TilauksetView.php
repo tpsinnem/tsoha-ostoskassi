@@ -9,7 +9,7 @@ class TilauksetView extends View {
       echo('<p>Lento '.$_GET['lento'].'</p>');
       $tilaajienPaikat = Model::tilaajienPaikat();
       //$tilaukset = Model::tilaukset();
-      if (!empty($tilaukset)) {
+      if (!empty($tilaajienPaikat)) {
          echo("<dl>\n");
          foreach ($tilaajienPaikat as $paikka) {
             echo('<dt>Paikka '.$paikka.'</dt>');
@@ -29,8 +29,7 @@ class TilauksetView extends View {
             echo("</dd>\n");
          }
          echo("</dl>\n");
-         if (  (!isset($_SESSION['yllapitaja'])) ||
-               ($_SESSION['yllapitaja'] == false)  ) {
+         if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
             echo('<p><a href="'.
                   Controller::url('tuotteet').
                   '">Tee uusi tilaus</a></p>'."\n");
