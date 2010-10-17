@@ -32,7 +32,7 @@ class TilauksetView extends View {
       }
       if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
          echo('<p><a href="'.
-               Controller::url('tuotteet').
+               Controller::url('ryhmat').
                '">Tee uusi tilaus</a></p>'."\n");
       }
    }
