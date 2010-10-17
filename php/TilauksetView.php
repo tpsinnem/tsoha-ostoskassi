@@ -10,12 +10,11 @@ class TilauksetView extends View {
       $tilaajienPaikat = Model::tilaajienPaikat();
       //$tilaukset = Model::tilaukset();
       if (!empty($tilaajienPaikat)) {
-         var_dump($tilaajienPaikat);
          echo("<dl>\n");
          foreach ($tilaajienPaikat as $paikka) {
-            echo('<dt>Paikka '.$paikka.'</dt>');
+            echo('<dt>Paikka '.$paikka['paikka'].'</dt>');
             echo("<dd>\n");
-            $tilaukset = Model::tilaukset($paikka);
+            $tilaukset = Model::tilaukset($paikka['paikka']);
             $yhteishinta = 0;
             echo("<ul>\n");
             foreach ($tilaukset as $tilaus) {
