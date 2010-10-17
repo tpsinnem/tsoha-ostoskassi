@@ -63,6 +63,8 @@ class Controller {
          TuoteMuokkausView::tulosta();
       } else if ($_GET['sivu'] == 'tilaukset') {
          TilauksetView::tulosta();
+      } else if ($_GET['sivu'] == 'tilaus') {
+         TilausView::tulosta();
       }
    }
 
