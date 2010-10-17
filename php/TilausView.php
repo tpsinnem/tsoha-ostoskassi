@@ -16,13 +16,13 @@ class TilausView extends View {
       ?>
       <p>Lento <?php echo($lento); ?></p>
       <p><?php echo($tuote['nimi'].', '.$tuote['hinta'].'e'); ?></p>
-      <form action="<?php echo(Controller::url('tuotteet',$_GET['ryhma'])); ?>" method="post">
+      <form action="<?php echo(Controller::url('tilaukset',$_GET['lento'])); ?>" method="post">
       <p>
          <?php
          if ($tilaus != null) {
-            echo('<input type="text" name="kpl" value="'.$tilaus['kpl'].'" />kpl<br />');
+            echo('<input type="text" name="kpl" value="'.$tilaus['kpl'].'" /> kpl<br />');
          } else {
-            echo('<input type="text" name="kpl" />kpl<br />');
+            echo('<input type="text" name="kpl" /> kpl<br />');
          }
          ?>
          <input type="submit" name="tilaa" value="Valmis" />
