@@ -35,6 +35,7 @@ class TilauksetView extends View {
 
                $yhteishinta += $tilaus['hinta'];
             }
+            echo("</ul>\n");
             echo("<p>Yhteensä ".$yhteishinta."e</p>\n");
             echo("</dd>\n");
          }
