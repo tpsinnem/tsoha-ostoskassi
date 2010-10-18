@@ -102,6 +102,10 @@ class Controller {
             unset($parametrit['tuote']);
          }
       }
+      if ($sivu == 'muokkaaTilaus') {
+         $parametrit['sivu'] = 'muokkaaTilaus';
+         $parametrit['tilaus'] = $valinta;
+      }
 
       $parametriString = "";
       foreach ($parametrit as $kentta => $arvo) {
