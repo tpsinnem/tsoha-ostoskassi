@@ -20,7 +20,7 @@ class TilauksetView extends View {
             foreach ($tilaukset as $tilaus) {
                //tähän tulisi sisällyttää tilauksen muokkaus sekä poisto
                echo('<li>');
-               if (!isset($_SESSION['yllapitaja'] || $_SESSION['yllapitaja'] == false) {
+               if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
                   echo( '<a href="'.
                         Controller::url('muokkaaTilaus',$tilaus['id']).
                         '">');
