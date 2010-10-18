@@ -40,7 +40,7 @@ class TuoteMuokkausView extends View {
             ?>
          <input type="submit" name="tuoteMuokkaus" value="Valmis" />
          <?php
-         if ($_SESSION['yllapitaja']==true && isset($_GET['tuote']) {
+         if ($_SESSION['yllapitaja']==true && isset($_GET['tuote'])) {
             ?>
             <input type="submit" name="poistaTuote" value="Poista tuote" />
             <?php
