@@ -98,7 +98,7 @@ class Model {
    }
 
    public static function kpl($tilaus) {
-      $queryString = "select kpl from tilaukset where t.id = $1;";
+      $queryString = "select kpl from tilaukset where id = $1;";
       $result = pg_query_params(self::db(), $queryString, array($tilaus));
       return pg_fetch_result($result, 'kpl');
    }
