@@ -19,10 +19,20 @@ class TilauksetView extends View {
             echo("<ul>\n");
             foreach ($tilaukset as $tilaus) {
                //tähän tulisi sisällyttää tilauksen muokkaus sekä poisto
-               echo('<li>'.
-                     $tilaus['nimi'].' '.
+               echo('<li>');
+               if (!isset($_SESSION['yllapitaja'] || $_SESSION['yllapitaja'] == false) {
+                  echo( '<a href="'.
+                        Controller::url('muokkaaTilaus',$tilaus['id']).
+                        '">');
+               }
+               echo( $tilaus['nimi'].' '.
                      $tilaus['kpl'].'kpl '.
-                     $tilaus['hinta']."e</li>\n");
+                     $tilaus['hinta']."e");
+               if (!isset($_SESSION['yllapitaja'] || $_SESSION['yllapitaja'] == false) {
+                  echo('</a>');
+               }
+               echo("</li>\n");
+
                $yhteishinta += $tilaus['hinta'];
             }
             echo("<p>Yhteensä ".$yhteishinta."e</p>\n");
