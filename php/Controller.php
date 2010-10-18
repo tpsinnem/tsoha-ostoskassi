@@ -36,9 +36,6 @@ class Controller {
       if (isset($_POST['tilaa'])) {
          if (isset($_GET['tilaus'])) {
             Model::muokkaaTilaus( $_GET['tilaus'],
-                                 $_SESSION['tunnus'],
-                                 $_GET['lento'],
-                                 $_GET['tuote'],
                                  $_POST['kpl'] );
          } else {
             Model::tilaa(  $_SESSION['tunnus'],
