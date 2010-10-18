@@ -20,7 +20,7 @@ class TilausView extends View {
       <form action="<?php echo(Controller::url('tilaukset',$_GET['lento'])); ?>" method="post">
       <p>
          <?php
-         if ($tilaus != null) {
+         if ($kpl != null) {
             echo('<input type="text" name="kpl" value="'.$kpl.'" /> kpl<br />');
          } else {
             echo('<input type="text" name="kpl" /> kpl<br />');
