@@ -118,7 +118,7 @@ class Model {
       pg_query_params(self::db(), $queryString, array($tilaus));
    }
 
-   public static muokkaaTilaus($tilaus, $kpl) {
+   public static function muokkaaTilaus($tilaus, $kpl) {
       $queryString = "  update tilaukset
                         set kpl = $2
                         where id = $1;";
