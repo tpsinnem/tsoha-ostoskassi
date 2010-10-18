@@ -6,9 +6,9 @@ class TilausView extends View {
 
    public static function tulosta() {
       parent::valikko();
-      $tilaus = null;
+      $kpl = null;
       if (isset($_GET['tilaus'])) {
-         $tilaus = Model::tilaus($_GET['tilaus']);
+         $kpl = Model::kpl($_GET['tilaus']);
       }
       var_dump($tilaus);
       $lento = $_GET['lento'];
@@ -21,7 +21,7 @@ class TilausView extends View {
       <p>
          <?php
          if ($tilaus != null) {
-            echo('<input type="text" name="kpl" value="'.$tilaus['kpl'].'" /> kpl<br />');
+            echo('<input type="text" name="kpl" value="'.$kpl.'" /> kpl<br />');
          } else {
             echo('<input type="text" name="kpl" /> kpl<br />');
          }
