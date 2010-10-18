@@ -10,6 +10,7 @@ class TilausView extends View {
       if (isset($_GET['tilaus'])) {
          $tilaus = Model::tilaus($_GET['tilaus']);
       }
+      var_dump($tilaus);
       $lento = $_GET['lento'];
       $tuote = Model::tuote($_GET['tuote']);
       
