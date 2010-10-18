@@ -31,6 +31,11 @@ class TuotteetView extends View {
       }
       if ($_SESSION['yllapitaja']==true) {
          echo(' <a href="'.Controller::url('muokkaaTuote').'">Lisää uusi tuote</a>');
+         ?>
+         <form action="<?php echo(Controller::url('ryhmat')); ?>" method="post">
+            <input type="submit" name="poistaRyhma" value="Poista tuoteryhmä" />
+         </form>
+         <?php
       }
    }
 }

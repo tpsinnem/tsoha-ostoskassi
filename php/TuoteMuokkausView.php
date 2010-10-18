@@ -39,6 +39,13 @@ class TuoteMuokkausView extends View {
             }
             ?>
          <input type="submit" name="tuoteMuokkaus" value="Valmis" />
+         <?php
+         if ($_SESSION['yllapitaja']==true) {
+            ?>
+            <input type="submit" name="poistaTuote" value="Poista tuote" />
+            <?php
+         }
+         ?>
       </p>
       </form>
       <?php

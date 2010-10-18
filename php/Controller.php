@@ -19,7 +19,10 @@ class Controller {
       if (isset($_POST['uusiRyhma']) && $_SESSION['yllapitaja'] == true) {
          Model::uusiRyhma($_POST['uusiRyhma']);
       }
-      if (isset($_POST['tuoteMuokkaus'])) {
+      if (isset($_POST['poistaRyhma']) && $_SESSION['yllapitaja'] == true) {
+         Model::poistaRyhma($_GET['ryhma']);
+      }
+      if (isset($_POST['tuoteMuokkaus']) && $_SESSION['yllapitaja'] == true) {
          if (isset($_GET['tuote'])) {
             Model::muokkaaTuote( $_GET['tuote'],
                                  $_POST['nimi'],
@@ -32,6 +35,9 @@ class Controller {
                                  $_POST['esittely'],
                                  $_GET['ryhma'] );
          }
+      }
+      if (isset($_POST['poistaTuote']) && $_SESSION['yllapitaja'] == true) {
+         Model::poistaTuote($_GET['tuote']);
       }
       if (isset($_POST['tilaa'])) {
          if (isset($_GET['tilaus'])) {

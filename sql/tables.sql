@@ -12,7 +12,7 @@ create table tuotteet (
    nimi        varchar(50) NOT NULL,
    hinta       real     NOT NULL,
    esittely    text,
-   tuoteryhma  integer     REFERENCES tuoteryhmat(id)
+   tuoteryhma  integer     REFERENCES tuoteryhmat(id) ON DELETE CASCADE
 );
 
 create table henkilot (
@@ -36,7 +36,7 @@ create table tilaukset (
    id       serial   PRIMARY KEY,
    henkilo  integer,
    lento    char(10),
-   tuote    integer  REFERENCES tuotteet(id),
+   tuote    integer  REFERENCES tuotteet(id) ON DELETE CASCADE,
    kpl      integer  NOT NULL,
 
    FOREIGN KEY (henkilo, lento) REFERENCES paikkavaraukset

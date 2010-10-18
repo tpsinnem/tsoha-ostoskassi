@@ -48,6 +48,12 @@ class Model {
       pg_query_params(self::db(), $queryString, array($nimi));
    }
 
+   public static function poistaRyhma($ryhma) {
+      $queryString = "  delete from tuoteryhmat
+                        where id = $1;";
+      pg_query_params(self::db(), $queryString, array($ryhma));
+   }
+
    public static function tuotteet($ryhma) {
       $queryString = "  select
                            id, nimi, hinta, esittely
@@ -87,6 +93,11 @@ class Model {
                         where
                            id = $5;";
       pg_query_params(self::db(), $queryString, array($nimi, $hinta, $esittely, $ryhma, $id));
+   }
+
+   public static function poistaTuote($tuote) {
+      $queryString = "delete from tuotteet where id = $1";
+      pg_query_params(self::db(), $queryString, array($tuote));
    }
 
    public static function tilaa($henkilo, $lento, $tuote, $kpl) {
