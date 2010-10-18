@@ -65,6 +65,8 @@ class Controller {
          TilauksetView::tulosta();
       } else if ($_GET['sivu'] == 'tilaus') {
          TilausView::tulosta();
+      } else if ($_GET['sivu'] == 'muokkaaTilaus') {
+         MuokkaaTilausView::tulosta();
       }
    }
 
@@ -103,7 +105,7 @@ class Controller {
          }
       }
       if ($sivu == 'muokkaaTilaus') {
-         $parametrit['sivu'] = 'muokkaaTilaus';
+         $parametrit['sivu'] = 'tilaus';
          $parametrit['tilaus'] = $valinta;
       }
 

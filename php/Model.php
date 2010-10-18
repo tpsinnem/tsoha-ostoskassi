@@ -112,6 +112,18 @@ class Model {
                            $2, $3, $4);";
       pg_query_params(self::db(), $queryString, array($henkilo, $lento, $tuote, $kpl));
    }
+
+   public static function tilaus($tilaus) {
+      $queryString = "select t.kpl from tilaukset as t where t.id = $1;";
+      pg_query_params(self::db(), $queryString, array($tilaus));
+   }
+
+   public static muokkaaTilaus($tilaus, $kpl) {
+      $queryString = "  update tilaukset
+                        set kpl = $2
+                        where id = $1;";
+      pg_query_params(self::db(), $queryString, array($tilaus, $kpl));
+   }
                            
 
    public static function lennot() {
