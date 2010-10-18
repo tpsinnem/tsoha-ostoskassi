@@ -28,7 +28,7 @@ class TilauksetView extends View {
                echo( $tilaus['nimi'].' '.
                      $tilaus['kpl'].'kpl '.
                      $tilaus['hinta']."e");
-               if (!isset($_SESSION['yllapitaja'] || $_SESSION['yllapitaja'] == false) {
+               if (!isset($_SESSION['yllapitaja']) || $_SESSION['yllapitaja'] == false) {
                   echo('</a>');
                }
                echo("</li>\n");
