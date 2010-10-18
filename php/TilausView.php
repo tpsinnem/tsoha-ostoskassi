@@ -9,7 +9,6 @@ class TilausView extends View {
       $kpl = null;
       if (isset($_GET['tilaus'])) {
          $kpl = Model::kpl($_GET['tilaus']);
-         var_dump($kpl);
       }
       $lento = $_GET['lento'];
       $tuote = Model::tuote($_GET['tuote']);
