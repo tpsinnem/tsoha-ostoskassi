@@ -26,6 +26,12 @@ class TilausView extends View {
          }
          ?>
          <input type="submit" name="tilaa" value="Valmis" />
+         <?php
+         if (isset($_GET['tilaus'])) {
+            ?>
+            <input type="submit" name="peruTilaus" value="Peru tilaus" />
+            <?php
+         }
       </p>
       </form>
       <?php

@@ -44,6 +44,9 @@ class Controller {
                            $_POST['kpl'] );
          }
       }
+      if (isset($_POST['peruTilaus'])) {
+         Model::peruTilaus($_GET['tilaus']);
+      }
 
       //TÄYDENNÄ
       if (!isset($_GET['sivu'])) {

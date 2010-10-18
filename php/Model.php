@@ -106,9 +106,18 @@ class Model {
    public static function muokkaaTilaus($tilaus, $kpl) {
       $queryString = "  update tilaukset
                         set kpl = $2
-                        where id = $1;";
-      pg_query_params(self::db(), $queryString, array($tilaus, $kpl));
+                        where
+                           id = $1
+                           and henkilo = (select id from henkilot where tunnus = $3);";
+      pg_query_params(self::db(), $queryString, array($tilaus, $kpl, $_SESSION['tunnus']));
    }
+
+   public static function peruTilaus($tilaus) {
+      $queryString = "  delete from tilaukset
+                        where
+                           id = $1
+                           and henkilo = (select id from henkilot where tunnus = $2);";
+      pg_query_params(self::db(), $queryString, array($tilaus, $_SESSION['tunnus']));
                            
 
    public static function lennot() {
