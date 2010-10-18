@@ -118,6 +118,7 @@ class Model {
                            id = $1
                            and henkilo = (select id from henkilot where tunnus = $2);";
       pg_query_params(self::db(), $queryString, array($tilaus, $_SESSION['tunnus']));
+   }
                            
 
    public static function lennot() {
