@@ -32,6 +32,7 @@ class TilausView extends View {
             <input type="submit" name="peruTilaus" value="Peru tilaus" />
             <?php
          }
+         ?>
       </p>
       </form>
       <?php
