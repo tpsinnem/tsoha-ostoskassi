@@ -27,7 +27,7 @@ class Model {
       } else {
          unset($_SESSION['tunnus']);
          unset($_SESSION['yllapitaja']);
-         echo("<p>Kirjautuminen epäonnistui ".$tunnus.' '.$salasana.' '.md5($salasana)."</p>");
+         echo("<p>Kirjautuminen epäonnistui</p>");
          return false;
       }
    }
