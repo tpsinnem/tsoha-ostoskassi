@@ -6,12 +6,19 @@ class TilausView extends View {
 
    public static function tulosta() {
       parent::valikko();
+      $tilaus = null;
       $kpl = null;
       if (isset($_GET['tilaus'])) {
+         $tilaus = Model::tilaus($_GET['tilaus']);
          $kpl = Model::kpl($_GET['tilaus']);
       }
       $lento = $_GET['lento'];
-      $tuote = Model::tuote($_GET['tuote']);
+      $tuote = null;
+      if (!isset($_GET['tilaus']) {
+         $tuote = Model::tuote($_GET['tuote']);
+      } else {
+         $tuote = Model::tuote($tilaus['id']);
+      }
       
       ?>
       <p>Lento <?php echo($lento); ?></p>

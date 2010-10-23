@@ -108,9 +108,11 @@ class Model {
       pg_query_params(self::db(), $queryString, array($henkilo, $lento, $tuote, $kpl));
    }
 
-   public static function kpl($tilaus) {
-      $queryString = "select kpl from tilaukset where id = $1;";
-      $result = pg_query_params(self::db(), $queryString, array($tilaus));
+   public static function tilaus($id) {
+      $queryString = "select tu.nimi, tu.id, ti.kpl
+                        from tuotteet as tu, tilaukset as ti
+                      where ti.id = $1;";
+      $result = pg_query_params(self::db(), $queryString, array($id));
       return pg_fetch_result($result, 'kpl');
    }
 
