@@ -14,7 +14,7 @@ class TilausView extends View {
       }
       $lento = $_GET['lento'];
       $tuote = null;
-      if (!isset($_GET['tilaus']) {
+      if (!isset($_GET['tilaus'])) {
          $tuote = Model::tuote($_GET['tuote']);
       } else {
          $tuote = Model::tuote($tilaus['id']);
