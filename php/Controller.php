@@ -104,6 +104,7 @@ class Controller {
       }
       if ($sivu == 'muokkaaTuote' || $sivu == 'tilaus') {
          $parametrit['sivu'] = $sivu;
+         unset($parametrit['tilaus']);
          if ($valinta != null) {
             $parametrit['tuote'] = $valinta;
          } else {
@@ -113,6 +114,7 @@ class Controller {
       if ($sivu == 'muokkaaTilaus') {
          $parametrit['sivu'] = 'tilaus';
          $parametrit['tilaus'] = $valinta;
+         unset($parametrit['tuote']);
       }
 
       $parametriString = "";
