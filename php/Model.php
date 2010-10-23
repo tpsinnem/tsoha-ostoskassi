@@ -113,7 +113,7 @@ class Model {
                         from tuotteet as tu, tilaukset as ti
                       where ti.id = $1;";
       $result = pg_query_params(self::db(), $queryString, array($id));
-      return pg_fetch_result($result, 'kpl');
+      return pg_fetch_array($result);
    }
 
    public static function muokkaaTilaus($tilaus, $kpl) {
