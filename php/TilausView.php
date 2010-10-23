@@ -20,6 +20,7 @@ class TilausView extends View {
          $tuote = Model::tuote($tilaus['id']);
       }
       var_dump($tuote);
+      var_dump($tilaus);
       
       ?>
       <p>Lento <?php echo($lento); ?></p>
