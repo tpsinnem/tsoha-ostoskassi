@@ -111,7 +111,9 @@ class Model {
    public static function tilaus($id) {
       $queryString = "select tu.nimi, tu.id, ti.kpl
                         from tuotteet as tu, tilaukset as ti
-                      where ti.id = $1;";
+                      where ti.id = $1
+                      and
+                      tu.id = ti.tuote;";
       $result = pg_query_params(self::db(), $queryString, array($id));
       return pg_fetch_array($result);
    }
